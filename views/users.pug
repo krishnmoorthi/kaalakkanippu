@@ -1,0 +1,20 @@
+extends layout 
+
+block content 
+  div 
+    form(action="/users/diff", method="post") 
+      label(for="borndate") Born Date: 
+      input(type="text", name="borndate" placeholder="MM/DD/YYYY") 
+      label(for="datedied")  Date Died: 
+      input(type="text", name="datedied" placeholder="MM/DD/YYYY")
+      input(type="submit", value="submit")
+  if(diff)
+    div
+      p 
+      h3.result-headers Born Date:
+        span.result-text &nbsp;&nbsp;&nbsp;&nbsp;#{bornDate}&nbsp;&nbsp;&nbsp;&nbsp;
+      h3.result-headers Date Died:
+        span.result-text &nbsp;&nbsp;&nbsp;#{dateDied}
+      br
+      br
+      h3 Diff:  &nbsp;&nbsp;&nbsp; #{diff} &nbsp;&nbsp; days.

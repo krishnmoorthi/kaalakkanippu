@@ -1,0 +1,37 @@
+extends layout
+
+block content
+  div 
+    form(action="/", method="post") 
+      label(for="name") Name: 
+      input(type="text", name="name") 
+      label(for="dob")  Date OF Birth: 
+      input(type="date", name="dob")
+      input(type="submit", value="submit")
+  div 
+    p 
+      h3.result-headers Name:
+        span.result-text &nbsp;&nbsp;&nbsp;&nbsp;#{name}&nbsp;&nbsp;&nbsp;&nbsp;
+      h3.result-headers DateOfBirth:
+        span.result-text &nbsp;&nbsp;&nbsp;#{dob}
+    br
+    br
+    table 
+      tr 
+        th Day Number 
+        th DOB Number 
+        th Name Planet Number
+      tr 
+        td #{resBirthNum}
+        td #{resDobNum}
+        td #{nameNum}  .....  #{resNameNum}
+      tr 
+        td #{dayPlanet}
+        td #{dobPlanet}
+        td #{namePlanet}
+      tr 
+        td 
+          span.relation #{dayRelation}
+        td 
+          span.relation #{dobRelation}
+        td  -
